@@ -1,8 +1,9 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 
-app.get('/', (req, res) => res.send({mensagem: 'Olá mundo!'}));
 
-app.listen(3000, ()=> {
-  console.log('API rodando na porta 3000');
+app.get('/', function(req, res) {
+  res.send('hello world');
 });
+
+app.listen(3000);
