@@ -4,4 +4,4 @@ const fnRoutes  = require('./routes')
 
 fnRoutes(app);
 
-app.listen(3000, () => console.log('API rodando na porta 3000'));
+module.exports = app
