@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes')
+const fnRoutes  = require('./routes')
 
-routes(app);
+fnRoutes(app);
 
 app.listen(3000, () => console.log('API rodando na porta 3000'));
