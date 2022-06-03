@@ -48,6 +48,15 @@ router.get('', (req, res) => {
         } 
         response.json(retorno);
     })
+    .patch('', (request, response) => {
+        const { id } = request.body;       
+        const modelo = lista.find(carro => carro.id == id);
+        var retorno = {msg: 'Modelo não encontrado'}
+        if(modelo){
+            retorno = modelo            
+        } 
+        response.json(retorno);
+    })
 
 module.exports = router
 
