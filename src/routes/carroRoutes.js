@@ -13,12 +13,14 @@ router.get('', (req, res) => {
 })
     .get('/:id', (request, response) => {
         const { id } = request.params;
-        const modelo = lista.find(carro => carro.id == id);        
-        var retorno = {msg: 'Modelo não encontrado'}
+        const modelo = lista.find(carro => carro.id == id);
+        var status = 404;
+        var retorno = {modelo: 'Modelo não encontrado', status}
         if(modelo){
-            retorno = modelo
+            status = 200
+            retorno = {modelo, status};
         } 
-        response.json(retorno);
+        response.status(retorno.status).json(retorno);
     })
     .post('', (req, res) => {
         const {modelo} = req.body
@@ -31,31 +33,37 @@ router.get('', (req, res) => {
         const { id } = request.params;
         const { modelo } = request.body
         const index = lista.findIndex(carro => carro.id == id);
-        var retorno = {msg: 'Modelo não encontrado'}
+        var status = 404;
+        var retorno = {modelo: 'Modelo não encontrado', status}
         if(index > -1){
-            retorno = {id, modelo }
+            status = 200
+            retorno = {id, modelo, status }
             lista[index].modelo = modelo
         } 
-        response.json(retorno);
+        response.status(retorno.status).json(retorno);
     })
     .delete('/:id', (request, response) => {
         const { id } = request.params;       
         const index = lista.findIndex(carro => carro.id == id);
-        var retorno = {msg: 'Modelo não encontrado'}
+        var status = 404;
+        var retorno = {msg: 'Modelo não encontrado', status}
         if(index > -1){
-            retorno = {msg:  `${id} removido com sucesso`}
+            status = 200;
+            retorno = {msg:  `${id} removido com sucesso`, status}
             lista.splice(index, 1)
         } 
-        response.json(retorno);
+        response.status(retorno.status).json(retorno);
     })
     .patch('', (request, response) => {
         const { id } = request.body;       
         const modelo = lista.find(carro => carro.id == id);
-        var retorno = {msg: 'Modelo não encontrado'}
+        var status = 404;
+        var retorno = {msg: 'Modelo não encontrado', status}
         if(modelo){
-            retorno = modelo            
+            status = 200;
+            retorno = {modelo, status}            
         } 
-        response.json(retorno);
+        response.status(retorno.status).json(retorno);
     })
 
 module.exports = router
