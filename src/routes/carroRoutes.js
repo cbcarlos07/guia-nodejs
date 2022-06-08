@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes')
 const express = require('express');
 const router = express.Router();
 const lista = [
@@ -14,10 +15,10 @@ router.get('', (req, res) => {
     .get('/:id', (request, response) => {
         const { id } = request.params;
         const modelo = lista.find(carro => carro.id == id);
-        var status = 404;
+        var status = StatusCodes.NOT_FOUND;
         var retorno = {modelo: 'Modelo não encontrado', status}
         if(modelo){
-            status = 200
+            status = StatusCodes.OK
             retorno = {modelo, status};
         } 
         response.status(retorno.status).json(retorno);
@@ -33,10 +34,10 @@ router.get('', (req, res) => {
         const { id } = request.params;
         const { modelo } = request.body
         const index = lista.findIndex(carro => carro.id == id);
-        var status = 404;
+        var status = StatusCodes.NOT_FOUND;
         var retorno = {modelo: 'Modelo não encontrado', status}
         if(index > -1){
-            status = 200
+            status = StatusCodes.OK
             retorno = {id, modelo, status }
             lista[index].modelo = modelo
         } 
@@ -45,10 +46,10 @@ router.get('', (req, res) => {
     .delete('/:id', (request, response) => {
         const { id } = request.params;       
         const index = lista.findIndex(carro => carro.id == id);
-        var status = 404;
+        var status = StatusCodes.NOT_FOUND;
         var retorno = {msg: 'Modelo não encontrado', status}
         if(index > -1){
-            status = 200;
+            status = StatusCodes.OK;
             retorno = {msg:  `${id} removido com sucesso`, status}
             lista.splice(index, 1)
         } 
@@ -57,10 +58,10 @@ router.get('', (req, res) => {
     .patch('', (request, response) => {
         const { id } = request.body;       
         const modelo = lista.find(carro => carro.id == id);
-        var status = 404;
+        var status = StatusCodes.NOT_FOUND;
         var retorno = {msg: 'Modelo não encontrado', status}
         if(modelo){
-            status = 200;
+            status = StatusCodes.OK;
             retorno = {modelo, status}            
         } 
         response.status(retorno.status).json(retorno);
