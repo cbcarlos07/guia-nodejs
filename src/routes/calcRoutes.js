@@ -1,9 +1,9 @@
 const express = require('express')
-
+const calcController = require( '../controllers/Calc')
 const router = express.Router()
 
 router.get('/soma-por-dois', (req, res) => {
-    res.json({resultado: 2 + 2})
+    res.json(calcController.somaPorDoisController())
 })
 router.get('/soma/:primeiro/:segundo', (req, res) => {
     const {primeiro, segundo} = req.params

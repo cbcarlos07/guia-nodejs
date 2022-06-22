@@ -1,0 +1,1 @@
+exports.somaPorDois = require('./somaPorDois')
