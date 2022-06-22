@@ -28,7 +28,7 @@ router.get('', (req, res) => {
         const id = (lista[ lista.length - 1].id ) + 1
         const dados = {modelo, id}
         lista.push(dados)
-        res.status(201).json(dados);
+        res.status(StatusCodes.CREATED).json(dados);
     })
     .put('/:id', (request, response) => {
         const { id } = request.params;
