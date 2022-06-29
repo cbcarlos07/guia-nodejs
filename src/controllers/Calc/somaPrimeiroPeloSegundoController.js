@@ -1,4 +1,5 @@
 const { somaPrimeiroPeloSegundo } = require('../../services/Calc')
 module.exports = function (req, res) {
-    res.json(somaPrimeiroPeloSegundo()) 
+    const {primeiro, segundo} = req.params
+    res.json(somaPrimeiroPeloSegundo(primeiro, segundo)) 
 }

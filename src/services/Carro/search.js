@@ -8,6 +8,6 @@ const search = id => {
         retorno = {modelo, status}            
     } 
     
-    return retorno
+    return {retorno, status}
 }
 module.exports = search

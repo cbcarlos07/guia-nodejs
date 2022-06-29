@@ -1,2 +1,5 @@
 exports.somaPorDoisController = require('./somaPorDoisController')
 exports.somaPrimeiroPeloSegundoController = require('./somaPrimeiroPeloSegundoController')
+exports.multiPrimeiroPeloSegundo = require('./multiPrimeiroPeloSegundo')
+exports.dividirPrimeiroPeloSegundo = require('./dividirPrimeiroPeloSegundo')
+exports.subPrimeiroPeloSegundo = require('./subPrimeiroPeloSegundo')

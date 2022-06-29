@@ -1,0 +1,6 @@
+exports.list = require('./listController')
+exports.getId = require('./getIdController')
+exports.create = require('./createController')
+exports.update = require('./updateController')
+exports.remove = require('./deleteController')
+exports.search = require('./searchController')

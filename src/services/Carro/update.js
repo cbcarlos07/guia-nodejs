@@ -8,6 +8,6 @@ const update = (id, modelo) => {
         retorno = {id, modelo, status }
         lista[index].modelo = modelo
     } 
-    return retorno
+    return {retorno, status}
 }
 module.exports = update

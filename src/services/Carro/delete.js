@@ -8,6 +8,6 @@ const remove = id => {
         retorno = {msg:  `${id} removido com sucesso`, status}
         lista.splice(index, 1)
     } 
-    return retorno
+    return {retorno, status}
 }
 module.exports = remove

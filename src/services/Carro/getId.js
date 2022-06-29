@@ -5,7 +5,7 @@ const getId = id => {
     var retorno = {modelo: 'Modelo não encontrado', status}
     if(modelo){
         status = true
-        retorno = {modelo, status};
+        retorno = {modelo};
     } 
     return {status, retorno}
 }
