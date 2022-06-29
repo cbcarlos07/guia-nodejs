@@ -1,1 +1,5 @@
 exports.somaPorDois = require('./somaPorDois')
+exports.somaPrimeiroPeloSegundo = require('./somaPrimeiroPeloSegundo')
+exports.multiPrimeiroPeloSegundo = require('./multiPrimeiroPeloSegundo')
+exports.dividirPrimeiroPeloSegundo = require('./dividirPrimeiroPeloSegundo')
+exports.subPrimeiroPeloSegundo = require('./subPrimeiroPeloSegundo')
